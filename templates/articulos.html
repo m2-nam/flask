@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-5">
+        {% with messages = get_flashed_messages() %}
+        {% if messages%}
+        {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="card car-bod">
+            <form action="/agregar_articulo/" method="POST">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="categoria_articulo" placeholder="Categoria" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="nombre_articulo" placeholder="Nombre" class="form-control">
+                </div>
+                <div class="form-control-file">
+                    <input type="file" name="archivo_articulo">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="descripcion_articulo" placeholder="Descripcion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Guardar Articulo
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+
+
+    </div>
+    <div class="col">
+        <table class="table table-struped table-bordered bg-while table-s">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Categoria</td>
+                    <td>Nombre</td>
+                    <td>Imagen</td>
+                    <td>Descripcion</td>
+                    <td>Operación</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cli in articulos %}
+                <tr>
+                    <td>{{ cli.0 }}</td>
+                    <td>{{ cli.1 }}</td>
+                    <td>{{ cli.2 }}</td>
+                    <td><img height="80" width="80" src="{{ cli.3 }}"></td>
+                    <td>{{ cli.4 }}</td>
+                    <td>
+                        <a href="/editar_articulo/{{cli.0}}" class="btn btn-info">Editar</a>
+                        <a href="/eliminar_articulo/{{cli.0}}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

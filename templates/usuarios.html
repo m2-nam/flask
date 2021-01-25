@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-5">
+        {% with messages = get_flashed_messages() %}
+        {% if messages%}
+        {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+    </div>
+    <div class="col">
+        <table class="table table-struped table-bordered bg-while table-s">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>DNI</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Ciudad</td>
+                    <td>Email</td>
+                    <td>Password</td>
+                    <td>Descripcion</td>
+                    <td>Operación</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cli in usuarios %}
+                <tr>
+                    <td>{{ cli.0 }}</td>
+                    <td>{{ cli.1 }}</td>
+                    <td>{{ cli.2 }}</td>
+                    <td>{{ cli.3 }}</td>
+                    <td>{{ cli.4 }}</td>
+                    <td>{{ cli.5 }}</td>
+                    <td>{{ cli.6 }}</td>
+                    <td>{{ cli.7 }}</td>
+                    <td>
+                        <a href="/editar_usuario/{{cli.0}}" class="btn btn-info">Editar</a>
+                        <a href="/eliminar_usuario/{{cli.0}}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}

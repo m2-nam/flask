@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="jumbotron">
+    <h2 class="lead"><strong>Por favor ingresar su dirección para el envío de su pedido </strong></h2>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="card car-bod">
+            <form action="/agregar_articulo/" method="POST">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="direccion" placeholder="Dirección" class="form-control">
+                </div>
+                <a href="/mensaje_1/" class="btn btn-info">Continuar</a>
+                <hr class="my-4">        
+            </form>
+        </div>
+        
+    </div>
+<div class="jumbotron">
+        <h2 class="lead"><strong>La dirección a la que tiene que enviar su artículo es:</strong></h2>
+        <p class="text-primary">Calle José Santos Chocano #212, Umacollo, Yanahuara, Arequipa</p>
+</div>
+
+<div class="jumbotron">
+    <p class="text-danger">Todos los envíos se pagan en el momento.</p>
+    <p class="text-danger">El plazo para enviar es solo hoy.</p>
+</div>
+
+{% endblock %}

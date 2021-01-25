@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+        <form action="/actualizar_articulo/{{cli.0}}" method="POST">
+            <div class="form-group">
+                <input type="text" name="id_articulo" placeholder="ID" class="form-control" value="{{cli.0}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categoria_articulo" placeholder="Categoria" class="form-control" value="{{cli.1}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="nombre_articulo" placeholder="Nombre" class="form-control" value="{{cli.2}}">
+            </div>
+            <div class="form-control-file">
+                <input type="file" name="archivo_articulo"  value="{{cli.3}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="descripcion_articulo" placeholder="Descripcion" class="form-control" value="{{cli.4}}">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                    Guardar Articulo
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

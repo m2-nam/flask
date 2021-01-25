@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+html, body {
+  background-color: #ffffff;
+  height: 100%;
+}
+h1 {
+  font-family: Nerko;
+  color: #000000;
+  text-align: left;
+}
+.contenedor {
+  height: 100%;
+  padding: 20px;
+  grid-gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 75px;
+  grid-auto-flow: dense;
+}
+.contenedor div {
+  font-family: Nunito;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fdfdfd;
+  background-color: #ac8e56;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.contenedor div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.horizontal {
+  grid-column: auto / span 2
+}
+.vertical {
+  grid-row: auto / span 2;
+}
+.grande {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+</style>
+<div class="jumbotron">
+  <h1 style="text-align: center"><b>Articulos disponibles</b></h1>
+
+</div>
+<div class="jumbotron">
+  <div class="jumbotron">
+    <p> <a href="/articulos/articulo_hp/">Harry Potter Saga Completa - Sean</href></p>
+    <img src="https://cdn.shopify.com/s/files/1/0024/6874/1219/products/9-14-j-k-rowling-harry-potter-complete-collection-7-book-set-fiction-paperback-j-k-rowling-3_600x.jpg?v=1604929367" width="550" height=300>
+    <hr class="my-4">
+  </div>
+  <div class="jumbotron">
+    <p> <a href="/articulos/articulo_nin/">Nintendo Switch 32 GB - Sean</href></p>  
+    <img src="https://cdn.pocket-lint.com/r/s/970x/assets/images/140007-games-review-nintendo-switch-review-image1-lp6zy9awm0-jpg.webp?v1" width="550" height=300>
+    <hr class="my-4">
+  </div>
+  <div class="jumbotron">
+    <p> <a href="/articulos/articulo_gt/">Game of Thrones 7 volúmenes - Sean</href></p>  
+    <img src="https://lh3.googleusercontent.com/-20h9EtW2anQ/X9Gm_Z0aXgI/AAAAAAAAoGk/OQLuEbF1p9UeGyOYFFsVYKQ4ITDIJAoNQCLcBGAsYHQ/gameofthrones.jpeg" width="550" height=400>
+    <hr class="my-4">
+  </div>
+  <div class="jumbotron">
+    <p> <a href="/articulos/articulo_cn/">La casa de la Noche - Yess</href></p>  
+      <img src="https://images0.tablondeanuncios.com/imagenesdin/27/13/foto2713879.jpg" width="400" height=350>
+    <hr class="my-4">
+  </div>
+  <div class="jumbotron">
+    <p> <a href="/articulos/articulo_ps/">Ps4 Slim 1TB - Yess</href></p>  
+      <img src="https://http2.mlstatic.com/D_NQ_NP_977556-MPE41980556246_052020-O.webp" width="500" height=450>
+    <hr class="my-4">
+  </div>
+  <div class="jumbotron">
+    <p> <a href="/articulos/articulo_hg/">The Hunger Games - Yess</href></p>  
+      <img src="https://images-na.ssl-images-amazon.com/images/I/81TUq9sAlkL.jpg" width="500" height=450>
+    <hr class="my-4">
+  </div>             
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+        <form action="/actualizar_usuario/{{cli.0}}" method="POST">
+            <div class="form-group">
+                <input type="text" name="id_usuario" placeholder="ID" class="form-control" value="{{cli.0}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="dni" placeholder="DNI" class="form-control" value="{{cli.1}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="nombre_usuario" placeholder="Nombre" class="form-control" value="{{cli.2}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="apellido_usuario" placeholder="Apellido" class="form-control" value="{{cli.3}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="ciudad_usuario" placeholder="Ciudad" class="form-control" value="{{cli.4}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="email_usuario" placeholder="Email" class="form-control" value="{{cli.5}}">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password_usuario" placeholder="Password" class="form-control" value="{{cli.6}}">
+            </div>
+            <div class="form-group">
+                <input type="text" name="descripcion_usuario" placeholder="Descripcion" class="form-control" value="{{cli.7}}">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                    Guardar Producto
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
